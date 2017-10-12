@@ -1,0 +1,28 @@
+/*
+
+*/
+table {
+	/*width: 630px;*/
+	border: 1px solid #DDD;
+	margin-left: auto;
+	margin-right: auto
+}
+
+tr td {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #DDD;
+	text-align: center;
+    vertical-align: middle;
+    font-size: 26px;
+    background-color: #f5fffa;
+}
+
+.SelNum {
+	text-align: center;
+	font-size: 40px;
+}
+
+span {
+	margin: 10px;
+}
