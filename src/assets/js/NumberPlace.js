@@ -12,10 +12,11 @@
 				$("#" + i).append("<td class=" + j + ">");
 			}
 		}
-		$("#numtable").css("background-color","#ffffff");
+		//$("#numtable").css("background-color","#ffffff");
+		//$("#1").find(".1").addClass("testing");
 
 		for(var i=1; i<10; i++){
-			$(".SelNum").append("<input type = button value=" + i + " id=" + i + " class=numbutton>");
+			$(".SelNum").append("<input type = button value=" + i + " class=numbutton>");
 		}
 		setEvent();
 	}
@@ -47,8 +48,8 @@
 
 					if( xAddress != null && yAddress != null ){
 						$("#" + yAddress).find("." + xAddress).text(targetNum);
-						xAddress = null;
-						yAddress = null;
+						//xAddress = null;
+						//yAddress = null;
 					};
 				}
 		);
