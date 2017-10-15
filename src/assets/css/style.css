@@ -18,7 +18,7 @@ tr td {
     vertical-align: middle;
     font-size: 26px;
 }
-
+/*クラス名が数字だとcssが反映されない\3~で文字コードにしてます*/
 .\31,.\34,.\37 {
 	border-left: 2px solid #000000;
 }
@@ -38,6 +38,10 @@ tr td {
 .SelNum {
 	text-align: center;
 	font-size: 40px;
+}
+
+.defnum {
+background-color: #e9e8ea !important;
 }
 
 .numbutton {
