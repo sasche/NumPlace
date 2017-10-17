@@ -4,7 +4,7 @@
 	var xAddress = null;
 	var yAddress = null;
 	var targetNum;
-	var successFlg = false;
+	var successFlg = true;
 
 	function init() {
 		for(var i=1; i<10; i++){
