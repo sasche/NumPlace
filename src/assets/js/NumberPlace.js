@@ -71,56 +71,58 @@
 	function check(){
 		//var $inputNunbers = $("table td:not(.defnum)");
 		var rows = [9];
-		var colomns = [9];
+		var columns = [9];
 		var squares = [9];
 		
 		//判定用の二次元配列を生成しておく
-		for(var idx=1; idx<10; idx++){
-			rows[idx] = (new Array(9)).fill(0);
-			colomns[idx] = (new Array(9)).fill(0);
-			squares[idx] = (new Array(9)).fill(0);
+		for(var idx=0; idx<9; idx++){
+			rows[idx] = (new Array()).fill(0);
+			columns[idx] = (new Array()).fill(0);
+			squares[idx] = (new Array()).fill(0);
 		}
 		
 		$("table tr").each(function(i,tr){
 			$(tr).find("td").each(function(j,cell){
-				var cellValue = $(cell).text()+0;
+				var rowIdx = i+1;
+				var columnIdx = j+1
+				var cellValue = parseInt($(cell).text());
 				//行
-				rows[i][cellValue] = 1;
+				rows[i][cellValue-1] = 1;
 				//列
-				colomns[j][cellValue] = 1;
+				columns[j][cellValue-1] = 1;
 				//3*3の四角
-				if(1<=i<=3 && 1<=j<=3){
+				if(1<=rowIdx<=3 && 1<=columnIdx<=3){
+					squares[0][cellValue] = 1;
+				}
+				if(1<=rowIdx<=3 && 4<=columnIdx<=6){
 					squares[1][cellValue] = 1;
 				}
-				if(1<=i<=3 && 4<=j<=6){
+				if(1<=rowIdx<=3 && 7<=columnIdx<=9){
 					squares[2][cellValue] = 1;
 				}
-				if(1<=i<=3 && 7<=j<=9){
+				if(4<=rowIdx<=6 && 1<=columnIdx<=3){
 					squares[3][cellValue] = 1;
 				}
-				if(4<=i<=6 && 1<=j<=3){
+				if(4<=rowIdx<=6 && 4<=columnIdx<=6){
 					squares[4][cellValue] = 1;
 				}
-				if(4<=i<=6 && 4<=j<=6){
+				if(4<=rowIdx<=6 && 7<=columnIdx<=9){
 					squares[5][cellValue] = 1;
 				}
-				if(4<=i<=6 && 7<=j<=9){
+				if(7<=rowIdx<=9 && 1<=columnIdx<=3){
 					squares[6][cellValue] = 1;
 				}
-				if(7<=i<=9 && 1<=j<=3){
+				if(7<=rowIdx<=9 && 4<=columnIdx<=6){
 					squares[7][cellValue] = 1;
 				}
-				if(7<=i<=9 && 4<=j<=6){
+				if(7<=rowIdx<=9 && 7<=columnIdx<=9){
 					squares[8][cellValue] = 1;
-				}
-				if(7<=i<=9 && 7<=j<=9){
-					squares[9][cellValue] = 1;
 				}
 			})
 			
 		});
 		for(var idx2=1; idx2<10; idx2++){
-			if(!($.inArray(0,rows[idx2]) == -1 && $.inArray(0,columns[idx2]) == -1 && $.inArray(0,suqares[idx2]) == -1)){
+			if($.inArray(0,rows[idx2]) != -1 && $.inArray(0,columns[idx2]) != -1 && $.inArray(0,squares[idx2]) != -1){
 				successFlg = false;
 			}
 
@@ -164,4 +166,58 @@
 		$("#9").find(".5").text("8").addClass("defnum");
 		$("#9").find(".8").text("7").addClass("defnum");
 		$("#9").find(".9").text("9").addClass("defnum");
+		
+		$("#1").find(".3").text("4").addClass("defnum");
+		$("#1").find(".3").text("4").addClass("defnum");
+		$("#1").find(".4").text("6").addClass("defnum");
+		$("#1").find(".6").text("8").addClass("defnum");
+		$("#1").find(".7").text("9").addClass("defnum");
+		$("#1").find(".8").text("1").addClass("defnum");
+		$("#1").find(".9").text("2").addClass("defnum");
+		$("#2").find(".2").text("7").addClass("defnum");
+		$("#2").find(".3").text("2").addClass("defnum");
+		$("#2").find(".7").text("3").addClass("defnum");
+		$("#2").find(".8").text("4").addClass("defnum");
+		$("#2").find(".9").text("8").addClass("defnum");
+		$("#3").find(".1").text("1").addClass("defnum");
+		$("#3").find(".4").text("3").addClass("defnum");
+		$("#3").find(".5").text("4").addClass("defnum");
+		$("#3").find(".6").text("2").addClass("defnum");
+		$("#3").find(".7").text("2").addClass("defnum");
+		$("#3").find(".9").text("7").addClass("defnum");
+		$("#4").find(".2").text("5").addClass("defnum");
+		$("#4").find(".3").text("9").addClass("defnum");
+		$("#4").find(".4").text("7").addClass("defnum");
+		$("#4").find(".6").text("1").addClass("defnum");
+		$("#4").find(".7").text("4").addClass("defnum");
+		$("#4").find(".8").text("2").addClass("defnum");
+		$("#5").find(".2").text("2").addClass("defnum");
+		$("#5").find(".3").text("6").addClass("defnum");
+		$("#5").find(".5").text("5").addClass("defnum");
+		$("#5").find(".7").text("7").addClass("defnum");
+		$("#5").find(".8").text("9").addClass("defnum");
+		$("#6").find(".2").text("1").addClass("defnum");
+		$("#6").find(".3").text("3").addClass("defnum");
+		$("#6").find(".4").text("9").addClass("defnum");
+		$("#6").find(".6").text("4").addClass("defnum");
+		$("#6").find(".7").text("8").addClass("defnum");
+		$("#6").find(".8").text("5").addClass("defnum");
+		$("#7").find(".1").text("9").addClass("defnum");
+		$("#7").find(".3").text("6").addClass("defnum");
+		$("#7").find(".4").text("1").addClass("defnum");
+		$("#7").find(".5").text("5").addClass("defnum");
+		$("#7").find(".6").text("3").addClass("defnum");
+		$("#7").find(".9").text("7").addClass("defnum");
+		$("#8").find(".1").text("2").addClass("defnum");
+		$("#8").find(".2").text("8").addClass("defnum");
+		$("#8").find(".3").text("7").addClass("defnum");
+		$("#8").find(".7").text("6").addClass("defnum");
+		$("#8").find(".8").text("3").addClass("defnum");
+		$("#9").find(".1").text("3").addClass("defnum");
+		$("#9").find(".2").text("4").addClass("defnum");
+		$("#9").find(".3").text("5").addClass("defnum");
+		$("#9").find(".4").text("2").addClass("defnum");
+		$("#9").find(".6").text("6").addClass("defnum");
+		$("#9").find(".7").text("1").addClass("defnum");
+		$("#9").find(".9").text("1").addClass("defnum");
 	}
