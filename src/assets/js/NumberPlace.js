@@ -120,8 +120,8 @@
 			
 		});
 		for(var idx2=1; idx2<10; idx2++){
-			if($.inArray(0,rows[idx2]) == -1 && $.inArray(0,columns[idx2]) == -1 && $.inArray(0,suqares[idx2]) == -1){
-				successFlg = true;
+			if(!($.inArray(0,rows[idx2]) == -1 && $.inArray(0,columns[idx2]) == -1 && $.inArray(0,suqares[idx2]) == -1)){
+				successFlg = false;
 			}
 
 		}
