@@ -167,6 +167,7 @@
 		$("#9").find(".8").text("7").addClass("defnum");
 		$("#9").find(".9").text("9").addClass("defnum");
 		
+		//デバッグ用解答
 		$("#1").find(".3").text("4").addClass("defnum");
 		$("#1").find(".3").text("4").addClass("defnum");
 		$("#1").find(".4").text("6").addClass("defnum");
@@ -219,5 +220,5 @@
 		$("#9").find(".4").text("2").addClass("defnum");
 		$("#9").find(".6").text("6").addClass("defnum");
 		$("#9").find(".7").text("1").addClass("defnum");
-		$("#9").find(".9").text("1").addClass("defnum");
+		$("#9").find(".9").text("9").addClass("defnum");
 	}
