@@ -123,15 +123,13 @@
 			if($.inArray(0,rows[idx2]) == -1 && $.inArray(0,columns[idx2]) == -1 && $.inArray(0,suqares[idx2]) == -1){
 				successFlg = true;
 			}
-			if(successFlg){
-				alert("クリア！");
-				return true;//break
-			}else{
-				alert("違います");
-				return true;//break
-			}
+
 		}
-		
+		if(successFlg){
+			alert("クリア！");
+		}else{
+			alert("違います");
+		}
 	}
 	
 	//初期配置関数 一時的に固定配置にしてあります
